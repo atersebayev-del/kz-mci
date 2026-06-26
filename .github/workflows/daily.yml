@@ -1,0 +1,37 @@
+name: Daily KZ-MCI Score
+
+on:
+  schedule:
+    # Run at 13:00 UTC = 19:00 Almaty time (UTC+6), after KASE closes
+    - cron: '0 13 * * 1-5'   # weekdays only
+  workflow_dispatch:           # allow manual trigger from GitHub UI
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pandas numpy scikit-learn requests
+
+      - name: Run daily scoring
+        run: python scripts/daily_score.py
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/kz_mci_latest.json data/kz_mci_option1.csv
+          git diff --staged --quiet || git commit -m "Daily KZ-MCI update $(date +'%Y-%m-%d')"
+          git push
