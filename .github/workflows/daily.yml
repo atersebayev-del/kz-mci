@@ -2,9 +2,11 @@ name: Daily KZ-MCI Score
 
 on:
   schedule:
-    # Run at 13:00 UTC = 19:00 Almaty time (UTC+6), after KASE closes
-    - cron: '0 13 * * 1-5'   # weekdays only
-  workflow_dispatch:           # allow manual trigger from GitHub UI
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   score:
@@ -22,8 +24,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install pandas numpy scikit-learn requests
+        run: pip install pandas numpy scikit-learn requests
 
       - name: Run daily scoring
         run: python scripts/daily_score.py

@@ -2,9 +2,11 @@ name: Monthly KZ-MCI PCA
 
 on:
   schedule:
-    # Run at 02:00 UTC on the 1st of each month
     - cron: '0 2 1 * *'
-  workflow_dispatch:    # allow manual trigger from GitHub UI
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   pca:
@@ -22,8 +24,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install pandas numpy scikit-learn requests
+        run: pip install pandas numpy scikit-learn requests
 
       - name: Run monthly PCA reestimation
         run: python scripts/monthly_pca.py
