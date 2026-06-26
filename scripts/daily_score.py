@@ -190,7 +190,7 @@ output = {
         "data_source":       "KASE, NBRK",
     },
     "latest": {
-        "date":   latest_date.strftime("%Y-%m-%d"),
+        "date":   today.strftime("%Y-%m-%d"),   # use run date not forward-fill end date
         "value":  round(float(latest_val), 3),
         "change": round(float(latest_val - prev_val), 3),
         "regime": (
