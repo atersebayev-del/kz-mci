@@ -1,0 +1,18 @@
+# Mac system files
+.DS_Store
+.DS_Store?
+
+# PyCharm / JetBrains IDE
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.env
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+main.py
