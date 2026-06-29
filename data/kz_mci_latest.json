@@ -5,11 +5,11 @@
     "version": "1.0",
     "methodology": "Expanding-window PCA, Option 1 (13 variables)",
     "loadings_as_of": "2026-06",
-    "last_updated": "2026-06-26",
+    "last_updated": "2026-06-29",
     "data_source": "KASE, NBRK"
   },
   "latest": {
-    "date": "2026-06-26",
+    "date": "2026-06-29",
     "value": 0.479,
     "change": -0.38,
     "regime": "Near average",
