@@ -10,10 +10,10 @@
   },
   "latest": {
     "date": "2026-07-01",
-    "value": 0.305,
-    "change": -0.684,
-    "regime": "Near average",
-    "interpretation": "Above historical average by 0.30 standard deviations"
+    "value": -1.211,
+    "change": -1.516,
+    "regime": "Easy conditions",
+    "interpretation": "Below historical average by 1.21 standard deviations"
   },
   "thresholds": {
     "severe": 2.0,
@@ -621,6 +621,11 @@
       "date": "2026-06",
       "value": 0.305,
       "regime": "calm"
+    },
+    {
+      "date": "2026-07",
+      "value": -1.211,
+      "regime": "easy"
     }
   ],
   "episodes": [
