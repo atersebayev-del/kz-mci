@@ -76,7 +76,8 @@ print("=" * 60)
 
 print("\n1. Fetching latest KASE data...")
 fetch_start = (today - timedelta(days=LOOKBACK_DAYS)).strftime("%Y-%m-%d")
-fetch_end   = today.strftime("%Y-%m-%d")
+# Fetch up to yesterday — today's data is incomplete until market close
+fetch_end   = (today - timedelta(days=1)).strftime("%Y-%m-%d")
 
 raw_series = {}
 for symbol, ep_type in INSTRUMENTS.items():
@@ -104,7 +105,7 @@ print("\n3. Updating historical dataset...")
 dataset_path = f"{DATA_DIR}/dataset_final.csv"
 
 if os.path.exists(dataset_path):
-    existing = pd.read_csv(dataset_path, index_col=0, parse_dates=True)
+    existing = pd.read_csv(dataset_path, index_col="date", parse_dates=True)
     # Merge: existing + new, new takes precedence for overlapping dates
     combined = pd.concat([existing, new_vars[[v for v in VARS
                                                if v in new_vars.columns]]])
@@ -186,9 +187,9 @@ if is_month_start or not os.path.exists(loadings_path):
 
 else:
     print("\n4. Loading existing PCA loadings (not month start)...")
-    loadings_df = pd.read_csv(loadings_path, index_col=0,
+    loadings_df = pd.read_csv(loadings_path, index_col="date",
                                parse_dates=True)
-    mci_norm = pd.read_csv(monthly_csv_path, index_col=0,
+    mci_norm = pd.read_csv(monthly_csv_path, index_col="date",
                             parse_dates=True).squeeze()
     with open(norm_constants_path) as f:
         norm_consts = json.load(f)
@@ -204,8 +205,14 @@ print("\n5. Computing daily scores...")
 # Load existing daily scores
 daily_csv_path = f"{DATA_DIR}/kz_mci_daily.csv"
 if os.path.exists(daily_csv_path):
-    daily_existing = pd.read_csv(daily_csv_path, index_col=0,
-                                  parse_dates=True).squeeze()
+    try:
+        daily_existing = pd.read_csv(daily_csv_path, index_col="date",
+                                      parse_dates=True).squeeze()
+    except (ValueError, KeyError):
+        # Handle case where CSV has no named index column
+        daily_existing = pd.read_csv(daily_csv_path, index_col=0,
+                                      parse_dates=True).squeeze()
+        daily_existing.index.name = "date"
 else:
     daily_existing = pd.Series(dtype=float, name="KZ_MCI_daily")
 
