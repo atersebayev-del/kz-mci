@@ -5,15 +5,15 @@
     "version": "1.0",
     "methodology": "Expanding-window PCA, Option 1 (13 variables)",
     "loadings_as_of": "2026-06",
-    "last_updated": "2026-06-29",
+    "last_updated": "2026-07-01",
     "data_source": "KASE, NBRK"
   },
   "latest": {
-    "date": "2026-06-29",
-    "value": 0.479,
-    "change": -0.38,
-    "regime": "Near average",
-    "interpretation": "Above historical average by 0.48 standard deviations"
+    "date": "2026-07-01",
+    "value": -1.211,
+    "change": -1.516,
+    "regime": "Easy conditions",
+    "interpretation": "Below historical average by 1.21 standard deviations"
   },
   "thresholds": {
     "severe": 2.0,
@@ -24,27 +24,27 @@
   "history": [
     {
       "date": "2016-07",
-      "value": -0.845,
+      "value": -0.844,
       "regime": "easy"
     },
     {
       "date": "2016-08",
-      "value": -1.154,
+      "value": -1.153,
       "regime": "easy"
     },
     {
       "date": "2016-09",
-      "value": -1.376,
+      "value": -1.375,
       "regime": "easy"
     },
     {
       "date": "2016-10",
-      "value": -1.268,
+      "value": -1.267,
       "regime": "easy"
     },
     {
       "date": "2016-11",
-      "value": -0.561,
+      "value": -0.56,
       "regime": "easy"
     },
     {
@@ -54,37 +54,37 @@
     },
     {
       "date": "2017-01",
-      "value": -2.436,
+      "value": -2.435,
       "regime": "easy"
     },
     {
       "date": "2017-02",
-      "value": -2.093,
+      "value": -2.092,
       "regime": "easy"
     },
     {
       "date": "2017-03",
-      "value": -1.593,
+      "value": -1.592,
       "regime": "easy"
     },
     {
       "date": "2017-04",
-      "value": -1.282,
+      "value": -1.281,
       "regime": "easy"
     },
     {
       "date": "2017-05",
-      "value": -0.456,
+      "value": -0.455,
       "regime": "easy"
     },
     {
       "date": "2017-06",
-      "value": -0.127,
+      "value": -0.126,
       "regime": "easy"
     },
     {
       "date": "2017-07",
-      "value": -0.156,
+      "value": -0.155,
       "regime": "easy"
     },
     {
@@ -114,12 +114,12 @@
     },
     {
       "date": "2018-01",
-      "value": -0.559,
+      "value": -0.558,
       "regime": "easy"
     },
     {
       "date": "2018-02",
-      "value": -0.363,
+      "value": -0.362,
       "regime": "easy"
     },
     {
@@ -164,7 +164,7 @@
     },
     {
       "date": "2018-11",
-      "value": 0.035,
+      "value": 0.036,
       "regime": "calm"
     },
     {
@@ -174,22 +174,22 @@
     },
     {
       "date": "2019-01",
-      "value": -0.315,
+      "value": -0.314,
       "regime": "easy"
     },
     {
       "date": "2019-02",
-      "value": -0.146,
+      "value": -0.145,
       "regime": "easy"
     },
     {
       "date": "2019-03",
-      "value": -0.659,
+      "value": -0.658,
       "regime": "easy"
     },
     {
       "date": "2019-04",
-      "value": -0.793,
+      "value": -0.792,
       "regime": "easy"
     },
     {
@@ -229,12 +229,12 @@
     },
     {
       "date": "2019-12",
-      "value": -0.082,
+      "value": -0.081,
       "regime": "easy"
     },
     {
       "date": "2020-01",
-      "value": -0.1,
+      "value": -0.099,
       "regime": "easy"
     },
     {
@@ -244,7 +244,7 @@
     },
     {
       "date": "2020-03",
-      "value": 4.219,
+      "value": 4.218,
       "regime": "severe"
     },
     {
@@ -259,7 +259,7 @@
     },
     {
       "date": "2020-06",
-      "value": -0.369,
+      "value": -0.368,
       "regime": "easy"
     },
     {
@@ -269,12 +269,12 @@
     },
     {
       "date": "2020-08",
-      "value": 0.205,
+      "value": 0.206,
       "regime": "calm"
     },
     {
       "date": "2020-09",
-      "value": 0.389,
+      "value": 0.39,
       "regime": "calm"
     },
     {
@@ -284,7 +284,7 @@
     },
     {
       "date": "2020-11",
-      "value": -0.307,
+      "value": -0.306,
       "regime": "easy"
     },
     {
@@ -304,7 +304,7 @@
     },
     {
       "date": "2021-03",
-      "value": -0.097,
+      "value": -0.096,
       "regime": "easy"
     },
     {
@@ -319,7 +319,7 @@
     },
     {
       "date": "2021-06",
-      "value": -0.446,
+      "value": -0.445,
       "regime": "easy"
     },
     {
@@ -334,17 +334,17 @@
     },
     {
       "date": "2021-09",
-      "value": -0.443,
+      "value": -0.442,
       "regime": "easy"
     },
     {
       "date": "2021-10",
-      "value": -0.369,
+      "value": -0.368,
       "regime": "easy"
     },
     {
       "date": "2021-11",
-      "value": 0.007,
+      "value": 0.008,
       "regime": "calm"
     },
     {
@@ -354,7 +354,7 @@
     },
     {
       "date": "2022-01",
-      "value": -0.377,
+      "value": -0.376,
       "regime": "easy"
     },
     {
@@ -364,7 +364,7 @@
     },
     {
       "date": "2022-03",
-      "value": 4.983,
+      "value": 4.981,
       "regime": "severe"
     },
     {
@@ -379,12 +379,12 @@
     },
     {
       "date": "2022-06",
-      "value": 2.832,
+      "value": 2.831,
       "regime": "severe"
     },
     {
       "date": "2022-07",
-      "value": 2.368,
+      "value": 2.367,
       "regime": "severe"
     },
     {
@@ -404,7 +404,7 @@
     },
     {
       "date": "2022-11",
-      "value": 0.474,
+      "value": 0.475,
       "regime": "calm"
     },
     {
@@ -434,7 +434,7 @@
     },
     {
       "date": "2023-05",
-      "value": 0.119,
+      "value": 0.12,
       "regime": "calm"
     },
     {
@@ -444,7 +444,7 @@
     },
     {
       "date": "2023-07",
-      "value": -0.541,
+      "value": -0.54,
       "regime": "easy"
     },
     {
@@ -464,7 +464,7 @@
     },
     {
       "date": "2023-11",
-      "value": -0.72,
+      "value": -0.719,
       "regime": "easy"
     },
     {
@@ -474,12 +474,12 @@
     },
     {
       "date": "2024-01",
-      "value": -1.082,
+      "value": -1.081,
       "regime": "easy"
     },
     {
       "date": "2024-02",
-      "value": -0.588,
+      "value": -0.587,
       "regime": "easy"
     },
     {
@@ -489,32 +489,32 @@
     },
     {
       "date": "2024-04",
-      "value": -1.098,
+      "value": -1.097,
       "regime": "easy"
     },
     {
       "date": "2024-05",
-      "value": -0.644,
+      "value": -0.643,
       "regime": "easy"
     },
     {
       "date": "2024-06",
-      "value": 0.079,
+      "value": 0.08,
       "regime": "calm"
     },
     {
       "date": "2024-07",
-      "value": -0.006,
+      "value": -0.005,
       "regime": "easy"
     },
     {
       "date": "2024-08",
-      "value": -0.507,
+      "value": -0.506,
       "regime": "easy"
     },
     {
       "date": "2024-09",
-      "value": -0.861,
+      "value": -0.86,
       "regime": "easy"
     },
     {
@@ -524,7 +524,7 @@
     },
     {
       "date": "2024-11",
-      "value": 0.327,
+      "value": 0.328,
       "regime": "calm"
     },
     {
@@ -554,12 +554,12 @@
     },
     {
       "date": "2025-05",
-      "value": -0.299,
+      "value": -0.298,
       "regime": "easy"
     },
     {
       "date": "2025-06",
-      "value": -0.322,
+      "value": -0.321,
       "regime": "easy"
     },
     {
@@ -574,7 +574,7 @@
     },
     {
       "date": "2025-09",
-      "value": -0.301,
+      "value": -0.3,
       "regime": "easy"
     },
     {
@@ -584,12 +584,12 @@
     },
     {
       "date": "2025-11",
-      "value": -1.318,
+      "value": -1.317,
       "regime": "easy"
     },
     {
       "date": "2025-12",
-      "value": -0.603,
+      "value": -0.602,
       "regime": "easy"
     },
     {
@@ -604,23 +604,28 @@
     },
     {
       "date": "2026-03",
-      "value": -0.207,
+      "value": -0.206,
       "regime": "easy"
     },
     {
       "date": "2026-04",
-      "value": -0.108,
+      "value": -0.107,
       "regime": "easy"
     },
     {
       "date": "2026-05",
-      "value": 0.859,
+      "value": 0.989,
       "regime": "calm"
     },
     {
       "date": "2026-06",
-      "value": 0.479,
+      "value": 0.305,
       "regime": "calm"
+    },
+    {
+      "date": "2026-07",
+      "value": -1.211,
+      "regime": "easy"
     }
   ],
   "episodes": [
