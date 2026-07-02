@@ -128,15 +128,88 @@ if loadings_list:
     loadings_df.to_csv(LOADINGS_CSV)
     print(f"  ✓ Loadings → {LOADINGS_CSV}  ({len(loadings_df)} months)")
 
-# ── 5. Update JSON ────────────────────────────────────────────────────────────
+# ── 5. Build JSON directly from reestimated values ───────────────────────────
+#
+# IMPORTANT: Do NOT call daily_score.py here — it would rescore using the
+# newly renormalized history, producing a normalization mismatch.
+# Instead build the JSON directly from mci_norm which is already on the
+# correct scale.
 
-print("\nUpdating JSON output...")
-os.system("python scripts/daily_score.py")
+print("\nBuilding JSON output...")
+
+import json
+from datetime import date
+
+episodes = [
+    {"start": "2016-06", "end": "2016-09",
+     "label": "Oil crash + FX adjustment", "color": "#e74c3c"},
+    {"start": "2018-08", "end": "2018-11",
+     "label": "EM selloff",                "color": "#e67e22"},
+    {"start": "2020-03", "end": "2020-06",
+     "label": "Covid + oil shock",         "color": "#c0392b"},
+    {"start": "2022-02", "end": "2022-09",
+     "label": "Russia invasion",           "color": "#8e44ad"},
+    {"start": "2025-01", "end": "2025-08",
+     "label": "Rates shock",               "color": "#16a085"},
+]
+
+monthly_norm  = mci_norm.resample("ME").last().dropna()
+latest_val    = monthly_norm.iloc[-1]
+latest_date   = monthly_norm.index[-1]
+prev_val      = monthly_norm.iloc[-2]
+
+records = []
+for dt, val in monthly_norm.items():
+    records.append({
+        "date":  dt.strftime("%Y-%m"),
+        "value": round(float(val), 3),
+        "regime": (
+            "severe"   if val >= 2.0 else
+            "elevated" if val >= 1.0 else
+            "calm"     if val >= 0.0 else
+            "easy"
+        )
+    })
+
+output = {
+    "metadata": {
+        "index_name":     "Kazakhstan Market Conditions Index",
+        "short_name":     "KZ-MCI",
+        "version":        "1.0",
+        "methodology":    "Expanding-window PCA, Option 1 (13 variables)",
+        "loadings_as_of": loadings_list[-1].name.strftime("%Y-%m"),
+        "last_updated":   date.today().strftime("%Y-%m-%d"),
+        "data_source":    "KASE, NBRK",
+    },
+    "latest": {
+        "date":   date.today().strftime("%Y-%m-%d"),
+        "value":  round(float(latest_val), 3),
+        "change": round(float(latest_val - prev_val), 3),
+        "regime": (
+            "Severe stress"   if latest_val >= 2.0 else
+            "Elevated stress" if latest_val >= 1.0 else
+            "Near average"    if latest_val >= 0.0 else
+            "Easy conditions"
+        ),
+        "interpretation": (
+            f"{'Above' if latest_val >= 0 else 'Below'} historical average "
+            f"by {abs(latest_val):.2f} standard deviations"
+        ),
+    },
+    "thresholds": {"severe": 2.0, "elevated": 1.0, "average": 0.0, "easy": -1.0},
+    "history":    records,
+    "episodes":   episodes,
+}
+
+with open(f"{DATA_DIR}/kz_mci_latest.json", "w") as f:
+    json.dump(output, f, indent=2)
+
+print(f"  ✓ JSON output → {DATA_DIR}/kz_mci_latest.json")
 
 print("\n── Monthly PCA summary ───────────────────────────────────────────────")
-print(f"  Months estimated: {len(valid)}")
-print(f"  Latest loading date: {loadings_list[-1].name.strftime('%Y-%m')}")
-print(f"  Variance explained (latest): "
-      f"{loadings_list[-1]['variance_explained']:.1%}")
-print(f"  Latest index reading: {mci_norm.dropna().iloc[-1]:+.3f}σ")
+print(f"  Months estimated:            {len(valid)}")
+print(f"  Latest loading date:         {loadings_list[-1].name.strftime('%Y-%m')}")
+print(f"  Variance explained (latest): {loadings_list[-1]['variance_explained']:.1%}")
+print(f"  Latest index reading:        {latest_val:+.3f}σ")
+print(f"  Change vs previous month:    {latest_val - prev_val:+.3f}σ")
 print("\nDone.")
