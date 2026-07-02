@@ -12,10 +12,10 @@
   },
   "latest": {
     "date": "2026-07-02",
-    "value": 1.385,
-    "change": 2.258,
-    "regime": "Elevated stress",
-    "interpretation": "Above historical average by 1.39 standard deviations",
+    "value": 0.524,
+    "change": 1.397,
+    "regime": "Near average",
+    "interpretation": "Above historical average by 0.52 standard deviations",
     "days_in_current_month": 2
   },
   "thresholds": {
@@ -634,37 +634,37 @@
   "history_daily": [
     {
       "date": "2026-01-05",
-      "value": -0.615,
+      "value": -0.614,
       "regime": "easy"
     },
     {
       "date": "2026-01-06",
-      "value": -0.639,
+      "value": -0.638,
       "regime": "easy"
     },
     {
       "date": "2026-01-08",
-      "value": -0.2,
+      "value": -0.199,
       "regime": "easy"
     },
     {
       "date": "2026-01-09",
-      "value": 0.055,
+      "value": 0.056,
       "regime": "calm"
     },
     {
       "date": "2026-01-12",
-      "value": 0.132,
+      "value": 0.133,
       "regime": "calm"
     },
     {
       "date": "2026-01-13",
-      "value": 0.155,
+      "value": 0.156,
       "regime": "calm"
     },
     {
       "date": "2026-01-14",
-      "value": -0.016,
+      "value": -0.015,
       "regime": "easy"
     },
     {
@@ -684,7 +684,7 @@
     },
     {
       "date": "2026-01-20",
-      "value": 0.134,
+      "value": 0.135,
       "regime": "calm"
     },
     {
@@ -694,12 +694,12 @@
     },
     {
       "date": "2026-01-22",
-      "value": 0.314,
+      "value": 0.315,
       "regime": "calm"
     },
     {
       "date": "2026-01-23",
-      "value": 0.431,
+      "value": 0.432,
       "regime": "calm"
     },
     {
@@ -709,7 +709,7 @@
     },
     {
       "date": "2026-01-27",
-      "value": 0.329,
+      "value": 0.33,
       "regime": "calm"
     },
     {
@@ -719,7 +719,7 @@
     },
     {
       "date": "2026-01-29",
-      "value": 0.089,
+      "value": 0.09,
       "regime": "calm"
     },
     {
@@ -739,12 +739,12 @@
     },
     {
       "date": "2026-02-04",
-      "value": 0.328,
+      "value": 0.329,
       "regime": "calm"
     },
     {
       "date": "2026-02-05",
-      "value": 0.253,
+      "value": 0.254,
       "regime": "calm"
     },
     {
@@ -759,7 +759,7 @@
     },
     {
       "date": "2026-02-10",
-      "value": 0.424,
+      "value": 0.425,
       "regime": "calm"
     },
     {
@@ -769,7 +769,7 @@
     },
     {
       "date": "2026-02-12",
-      "value": 0.481,
+      "value": 0.482,
       "regime": "calm"
     },
     {
@@ -784,7 +784,7 @@
     },
     {
       "date": "2026-02-17",
-      "value": 0.288,
+      "value": 0.289,
       "regime": "calm"
     },
     {
@@ -809,7 +809,7 @@
     },
     {
       "date": "2026-02-24",
-      "value": 0.527,
+      "value": 0.528,
       "regime": "calm"
     },
     {
@@ -824,17 +824,17 @@
     },
     {
       "date": "2026-02-27",
-      "value": 0.633,
+      "value": 0.634,
       "regime": "calm"
     },
     {
       "date": "2026-03-02",
-      "value": 0.564,
+      "value": 0.565,
       "regime": "calm"
     },
     {
       "date": "2026-03-03",
-      "value": 0.628,
+      "value": 0.629,
       "regime": "calm"
     },
     {
@@ -899,7 +899,7 @@
     },
     {
       "date": "2026-03-26",
-      "value": 0.429,
+      "value": 0.43,
       "regime": "calm"
     },
     {
@@ -919,12 +919,12 @@
     },
     {
       "date": "2026-04-01",
-      "value": 0.672,
+      "value": 0.673,
       "regime": "calm"
     },
     {
       "date": "2026-04-02",
-      "value": 0.762,
+      "value": 0.763,
       "regime": "calm"
     },
     {
@@ -934,17 +934,17 @@
     },
     {
       "date": "2026-04-06",
-      "value": 0.234,
+      "value": 0.235,
       "regime": "calm"
     },
     {
       "date": "2026-04-07",
-      "value": 1.18,
+      "value": 1.181,
       "regime": "elevated"
     },
     {
       "date": "2026-04-08",
-      "value": 1.845,
+      "value": 1.846,
       "regime": "elevated"
     },
     {
@@ -974,22 +974,22 @@
     },
     {
       "date": "2026-04-16",
-      "value": -0.238,
+      "value": -0.237,
       "regime": "easy"
     },
     {
       "date": "2026-04-17",
-      "value": -0.153,
+      "value": -0.152,
       "regime": "easy"
     },
     {
       "date": "2026-04-20",
-      "value": -0.796,
+      "value": -0.795,
       "regime": "easy"
     },
     {
       "date": "2026-04-21",
-      "value": -0.982,
+      "value": -0.981,
       "regime": "easy"
     },
     {
@@ -1009,7 +1009,7 @@
     },
     {
       "date": "2026-04-27",
-      "value": 0.62,
+      "value": 0.621,
       "regime": "calm"
     },
     {
@@ -1019,12 +1019,12 @@
     },
     {
       "date": "2026-04-29",
-      "value": 1.049,
+      "value": 1.05,
       "regime": "elevated"
     },
     {
       "date": "2026-04-30",
-      "value": 0.006,
+      "value": 0.007,
       "regime": "calm"
     },
     {
@@ -1039,7 +1039,7 @@
     },
     {
       "date": "2026-05-06",
-      "value": 0.55,
+      "value": 0.551,
       "regime": "calm"
     },
     {
@@ -1049,12 +1049,12 @@
     },
     {
       "date": "2026-05-12",
-      "value": -0.296,
+      "value": -0.295,
       "regime": "easy"
     },
     {
       "date": "2026-05-13",
-      "value": 0.709,
+      "value": 0.71,
       "regime": "calm"
     },
     {
@@ -1064,7 +1064,7 @@
     },
     {
       "date": "2026-05-15",
-      "value": 0.926,
+      "value": 0.927,
       "regime": "calm"
     },
     {
@@ -1094,7 +1094,7 @@
     },
     {
       "date": "2026-05-25",
-      "value": 0.639,
+      "value": 0.64,
       "regime": "calm"
     },
     {
@@ -1109,12 +1109,12 @@
     },
     {
       "date": "2026-05-29",
-      "value": 2.861,
+      "value": 2.862,
       "regime": "severe"
     },
     {
       "date": "2026-06-01",
-      "value": 2.805,
+      "value": 2.806,
       "regime": "severe"
     },
     {
@@ -1129,7 +1129,7 @@
     },
     {
       "date": "2026-06-04",
-      "value": 1.128,
+      "value": 1.129,
       "regime": "elevated"
     },
     {
@@ -1139,7 +1139,7 @@
     },
     {
       "date": "2026-06-08",
-      "value": 0.163,
+      "value": 0.164,
       "regime": "calm"
     },
     {
@@ -1154,7 +1154,7 @@
     },
     {
       "date": "2026-06-11",
-      "value": 0.297,
+      "value": 0.298,
       "regime": "calm"
     },
     {
@@ -1194,7 +1194,7 @@
     },
     {
       "date": "2026-06-23",
-      "value": -0.338,
+      "value": -0.337,
       "regime": "easy"
     },
     {
@@ -1224,13 +1224,13 @@
     },
     {
       "date": "2026-07-01",
-      "value": -0.873,
+      "value": -0.872,
       "regime": "easy"
     },
     {
       "date": "2026-07-02",
-      "value": 1.385,
-      "regime": "elevated"
+      "value": 0.524,
+      "regime": "calm"
     }
   ],
   "episodes": [
