@@ -2,14 +2,14 @@ name: Monthly KZ-MCI PCA
 
 on:
   schedule:
-    - cron: '0 2 1 * *'
+    - cron: '0 2 1 * *'   # 1st of each month at 02:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  pca:
+  update:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,10 +26,12 @@ jobs:
       - name: Install dependencies
         run: pip install pandas numpy scikit-learn requests
 
-      - name: Run monthly PCA reestimation
-        run: python scripts/monthly_pca.py
+      - name: Run full PCA reestimation
+        run: python scripts/update_index.py
+        env:
+          FORCE_MONTH_START: "true"
 
-      - name: Commit and push updated data
+      - name: Commit and push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

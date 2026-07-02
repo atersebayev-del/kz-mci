@@ -23,7 +23,11 @@ INSTRUMENTS = {
 }
 
 def to_unix(date_str):
-    return int(datetime.strptime(date_str, "%Y-%m-%d").timestamp())
+    # Use UTC midnight to avoid local timezone shifting dates
+    # e.g. Almaty UTC+5 would otherwise pull previous day's data
+    from datetime import timezone
+    dt = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+    return int(dt.timestamp())
 
 def fetch_kase(symbol, endpoint_type, start, end, retries=3):
     """Fetch daily OHLCV data from KASE chart API."""
