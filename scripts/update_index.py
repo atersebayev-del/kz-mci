@@ -37,6 +37,29 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from scripts.utils import INSTRUMENTS, fetch_kase, load_base_rate, build_variables
 
+
+def _coerce_datetime_index(obj, label):
+    """
+    Defensive guard: force a DataFrame/Series index to real Timestamps and
+    drop any row whose index value can't be parsed as a date (e.g. leftover
+    git-conflict marker lines like '<<<<<<< Updated upstream' that end up
+    in a CSV's date column). Prevents 'Timestamp vs str' sort/concat crashes
+    regardless of how the bad value got there.
+    """
+    parsed = pd.to_datetime(obj.index, errors="coerce")
+    bad_mask = parsed.isna()
+    n_bad = int(bad_mask.sum())
+    if n_bad:
+        bad_values = list(obj.index[bad_mask])[:5]
+        print(f"  [WARN] {label}: dropped {n_bad} row(s) with unparseable "
+              f"date index, e.g. {bad_values}")
+        obj = obj[~bad_mask]
+        parsed = parsed[~bad_mask]
+    obj = obj.copy()
+    obj.index = parsed
+    obj.index.name = "date"
+    return obj
+
 # ── Config ────────────────────────────────────────────────────────────────────
 
 DATA_DIR              = "data"
@@ -105,7 +128,8 @@ print("\n3. Updating historical dataset...")
 dataset_path = f"{DATA_DIR}/dataset_final.csv"
 
 if os.path.exists(dataset_path):
-    existing = pd.read_csv(dataset_path, index_col="date", parse_dates=True)
+    existing = pd.read_csv(dataset_path, index_col="date", parse_dates=False)
+    existing = _coerce_datetime_index(existing, "dataset_final.csv")
     # Merge: existing + new, new takes precedence for overlapping dates
     combined = pd.concat([existing, new_vars[[v for v in VARS
                                                if v in new_vars.columns]]])
@@ -205,14 +229,11 @@ print("\n5. Computing daily scores...")
 # Load existing daily scores
 daily_csv_path = f"{DATA_DIR}/kz_mci_daily.csv"
 if os.path.exists(daily_csv_path):
-    try:
-        daily_existing = pd.read_csv(daily_csv_path, index_col="date",
-                                      parse_dates=True).squeeze()
-    except (ValueError, KeyError):
-        # Handle case where CSV has no named index column
-        daily_existing = pd.read_csv(daily_csv_path, index_col=0,
-                                      parse_dates=True).squeeze()
-        daily_existing.index.name = "date"
+    daily_existing = pd.read_csv(daily_csv_path, index_col="date",
+                                  parse_dates=False)["KZ_MCI_daily"]
+    daily_existing = _coerce_datetime_index(
+        daily_existing.to_frame(), "kz_mci_daily.csv"
+    )["KZ_MCI_daily"]
 else:
     daily_existing = pd.Series(dtype=float, name="KZ_MCI_daily")
 
@@ -250,6 +271,9 @@ daily_new.index.name = "date"
 
 # Merge with existing, keep last DAILY_HISTORY_DAYS
 daily_combined = pd.concat([daily_existing, daily_new])
+daily_combined = _coerce_datetime_index(
+    daily_combined.to_frame(), "daily_combined (pre-sort)"
+)["KZ_MCI_daily"]
 daily_combined = daily_combined[
     ~daily_combined.index.duplicated(keep="last")].sort_index()
 daily_combined = daily_combined[daily_combined.index >= cutoff]

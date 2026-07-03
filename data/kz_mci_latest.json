@@ -5,17 +5,17 @@
     "version": "2.0",
     "methodology": "Expanding-window PCA, Option 1 (13 variables)",
     "loadings_as_of": "2026-07",
-    "last_updated": "2026-07-02",
+    "last_updated": "2026-07-03",
     "data_source": "KASE, NBRK",
-    "norm_mean": -1.07482,
-    "norm_std": 0.797433
+    "norm_mean": -1.027464,
+    "norm_std": 0.786588
   },
   "latest": {
     "date": "2026-07-02",
-    "value": 0.524,
-    "change": 1.397,
-    "regime": "Near average",
-    "interpretation": "Above historical average by 0.52 standard deviations",
+    "value": -0.588,
+    "change": 0.245,
+    "regime": "Easy conditions",
+    "interpretation": "Below historical average by 0.59 standard deviations",
     "days_in_current_month": 2
   },
   "thresholds": {
@@ -27,1210 +27,1210 @@
   "history_monthly": [
     {
       "date": "2016-07",
-      "value": -0.834,
+      "value": -0.905,
       "regime": "easy"
     },
     {
       "date": "2016-08",
-      "value": -1.142,
-      "regime": "easy"
-    },
-    {
-      "date": "2016-09",
-      "value": -1.364,
-      "regime": "easy"
-    },
-    {
-      "date": "2016-10",
-      "value": -1.257,
-      "regime": "easy"
-    },
-    {
-      "date": "2016-11",
-      "value": -0.549,
-      "regime": "easy"
-    },
-    {
-      "date": "2016-12",
       "value": -1.218,
       "regime": "easy"
     },
     {
+      "date": "2016-09",
+      "value": -1.443,
+      "regime": "easy"
+    },
+    {
+      "date": "2016-10",
+      "value": -1.334,
+      "regime": "easy"
+    },
+    {
+      "date": "2016-11",
+      "value": -0.617,
+      "regime": "easy"
+    },
+    {
+      "date": "2016-12",
+      "value": -1.295,
+      "regime": "easy"
+    },
+    {
       "date": "2017-01",
-      "value": -2.425,
+      "value": -2.519,
       "regime": "easy"
     },
     {
       "date": "2017-02",
-      "value": -2.082,
+      "value": -2.171,
       "regime": "easy"
     },
     {
       "date": "2017-03",
-      "value": -1.582,
+      "value": -1.664,
       "regime": "easy"
     },
     {
       "date": "2017-04",
-      "value": -1.271,
+      "value": -1.349,
       "regime": "easy"
     },
     {
       "date": "2017-05",
-      "value": -0.444,
+      "value": -0.511,
       "regime": "easy"
     },
     {
       "date": "2017-06",
-      "value": -0.115,
+      "value": -0.177,
       "regime": "easy"
     },
     {
       "date": "2017-07",
-      "value": -0.144,
+      "value": -0.206,
       "regime": "easy"
     },
     {
       "date": "2017-08",
-      "value": 0.108,
+      "value": 0.05,
       "regime": "calm"
     },
     {
       "date": "2017-09",
-      "value": 0.102,
+      "value": 0.043,
       "regime": "calm"
     },
     {
       "date": "2017-10",
-      "value": -0.423,
+      "value": -0.489,
       "regime": "easy"
     },
     {
       "date": "2017-11",
-      "value": -0.667,
+      "value": -0.736,
       "regime": "easy"
     },
     {
       "date": "2017-12",
-      "value": -0.038,
+      "value": -0.099,
       "regime": "easy"
     },
     {
       "date": "2018-01",
-      "value": -0.548,
+      "value": -0.615,
       "regime": "easy"
     },
     {
       "date": "2018-02",
-      "value": -0.351,
+      "value": -0.416,
       "regime": "easy"
     },
     {
       "date": "2018-03",
-      "value": -0.335,
+      "value": -0.4,
       "regime": "easy"
     },
     {
       "date": "2018-04",
-      "value": 0.623,
+      "value": 0.572,
       "regime": "calm"
     },
     {
       "date": "2018-05",
-      "value": -0.028,
-      "regime": "easy"
-    },
-    {
-      "date": "2018-06",
-      "value": 0.062,
-      "regime": "calm"
-    },
-    {
-      "date": "2018-07",
-      "value": 0.129,
-      "regime": "calm"
-    },
-    {
-      "date": "2018-08",
-      "value": 0.895,
-      "regime": "calm"
-    },
-    {
-      "date": "2018-09",
-      "value": 0.893,
-      "regime": "calm"
-    },
-    {
-      "date": "2018-10",
-      "value": 0.188,
-      "regime": "calm"
-    },
-    {
-      "date": "2018-11",
-      "value": 0.047,
-      "regime": "calm"
-    },
-    {
-      "date": "2018-12",
-      "value": -0.134,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-01",
-      "value": -0.303,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-02",
-      "value": -0.134,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-03",
-      "value": -0.647,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-04",
-      "value": -0.781,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-05",
-      "value": -0.726,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-06",
-      "value": -0.13,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-07",
-      "value": 0.042,
-      "regime": "calm"
-    },
-    {
-      "date": "2019-08",
-      "value": 0.055,
-      "regime": "calm"
-    },
-    {
-      "date": "2019-09",
-      "value": -0.105,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-10",
-      "value": -0.28,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-11",
-      "value": -0.331,
-      "regime": "easy"
-    },
-    {
-      "date": "2019-12",
-      "value": -0.07,
-      "regime": "easy"
-    },
-    {
-      "date": "2020-01",
       "value": -0.088,
       "regime": "easy"
     },
     {
+      "date": "2018-06",
+      "value": 0.002,
+      "regime": "calm"
+    },
+    {
+      "date": "2018-07",
+      "value": 0.07,
+      "regime": "calm"
+    },
+    {
+      "date": "2018-08",
+      "value": 0.847,
+      "regime": "calm"
+    },
+    {
+      "date": "2018-09",
+      "value": 0.845,
+      "regime": "calm"
+    },
+    {
+      "date": "2018-10",
+      "value": 0.131,
+      "regime": "calm"
+    },
+    {
+      "date": "2018-11",
+      "value": -0.012,
+      "regime": "easy"
+    },
+    {
+      "date": "2018-12",
+      "value": -0.196,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-01",
+      "value": -0.367,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-02",
+      "value": -0.196,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-03",
+      "value": -0.716,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-04",
+      "value": -0.852,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-05",
+      "value": -0.796,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-06",
+      "value": -0.192,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-07",
+      "value": -0.018,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-08",
+      "value": -0.005,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-09",
+      "value": -0.167,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-10",
+      "value": -0.345,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-11",
+      "value": -0.396,
+      "regime": "easy"
+    },
+    {
+      "date": "2019-12",
+      "value": -0.131,
+      "regime": "easy"
+    },
+    {
+      "date": "2020-01",
+      "value": -0.15,
+      "regime": "easy"
+    },
+    {
       "date": "2020-02",
-      "value": -0.215,
+      "value": -0.278,
       "regime": "easy"
     },
     {
       "date": "2020-03",
-      "value": 4.232,
+      "value": 4.231,
       "regime": "severe"
     },
     {
       "date": "2020-04",
-      "value": 0.988,
+      "value": 0.942,
       "regime": "calm"
     },
     {
       "date": "2020-05",
-      "value": -0.317,
+      "value": -0.381,
       "regime": "easy"
     },
     {
       "date": "2020-06",
-      "value": -0.357,
+      "value": -0.422,
       "regime": "easy"
     },
     {
       "date": "2020-07",
-      "value": 0.26,
+      "value": 0.203,
       "regime": "calm"
     },
     {
       "date": "2020-08",
-      "value": 0.217,
+      "value": 0.16,
       "regime": "calm"
     },
     {
       "date": "2020-09",
-      "value": 0.401,
+      "value": 0.347,
       "regime": "calm"
     },
     {
       "date": "2020-10",
-      "value": 0.131,
+      "value": 0.072,
       "regime": "calm"
     },
     {
       "date": "2020-11",
-      "value": -0.295,
+      "value": -0.359,
       "regime": "easy"
     },
     {
       "date": "2020-12",
-      "value": -0.18,
+      "value": -0.242,
       "regime": "easy"
     },
     {
       "date": "2021-01",
-      "value": 0.09,
+      "value": 0.031,
       "regime": "calm"
     },
     {
       "date": "2021-02",
-      "value": -0.176,
+      "value": -0.238,
       "regime": "easy"
     },
     {
       "date": "2021-03",
-      "value": -0.085,
+      "value": -0.146,
       "regime": "easy"
     },
     {
       "date": "2021-04",
-      "value": 0.184,
+      "value": 0.127,
       "regime": "calm"
     },
     {
       "date": "2021-05",
-      "value": -0.169,
+      "value": -0.231,
       "regime": "easy"
     },
     {
       "date": "2021-06",
-      "value": -0.434,
+      "value": -0.501,
       "regime": "easy"
     },
     {
       "date": "2021-07",
-      "value": -0.027,
+      "value": -0.088,
       "regime": "easy"
     },
     {
       "date": "2021-08",
-      "value": -0.268,
+      "value": -0.332,
       "regime": "easy"
     },
     {
       "date": "2021-09",
-      "value": -0.431,
+      "value": -0.497,
       "regime": "easy"
     },
     {
       "date": "2021-10",
-      "value": -0.357,
+      "value": -0.422,
       "regime": "easy"
     },
     {
       "date": "2021-11",
-      "value": 0.019,
-      "regime": "calm"
+      "value": -0.041,
+      "regime": "easy"
     },
     {
       "date": "2021-12",
-      "value": -0.033,
+      "value": -0.094,
       "regime": "easy"
     },
     {
       "date": "2022-01",
-      "value": -0.365,
+      "value": -0.43,
       "regime": "easy"
     },
     {
       "date": "2022-02",
-      "value": 2.435,
+      "value": 2.408,
       "regime": "severe"
     },
     {
       "date": "2022-03",
-      "value": 4.996,
+      "value": 5.005,
       "regime": "severe"
     },
     {
       "date": "2022-04",
-      "value": 1.484,
+      "value": 1.444,
       "regime": "elevated"
     },
     {
       "date": "2022-05",
-      "value": 1.952,
+      "value": 1.918,
       "regime": "elevated"
     },
     {
       "date": "2022-06",
-      "value": 2.845,
+      "value": 2.824,
       "regime": "severe"
     },
     {
       "date": "2022-07",
-      "value": 2.38,
+      "value": 2.353,
       "regime": "severe"
     },
     {
       "date": "2022-08",
-      "value": 0.739,
+      "value": 0.689,
       "regime": "calm"
     },
     {
       "date": "2022-09",
-      "value": 1.171,
+      "value": 1.127,
       "regime": "elevated"
     },
     {
       "date": "2022-10",
-      "value": 0.74,
+      "value": 0.69,
       "regime": "calm"
     },
     {
       "date": "2022-11",
-      "value": 0.486,
+      "value": 0.433,
       "regime": "calm"
     },
     {
       "date": "2022-12",
-      "value": 0.684,
+      "value": 0.633,
       "regime": "calm"
     },
     {
       "date": "2023-01",
-      "value": 0.088,
+      "value": 0.029,
       "regime": "calm"
     },
     {
       "date": "2023-02",
-      "value": -0.119,
+      "value": -0.18,
       "regime": "easy"
     },
     {
       "date": "2023-03",
-      "value": 1.687,
+      "value": 1.65,
       "regime": "elevated"
     },
     {
       "date": "2023-04",
-      "value": 0.822,
+      "value": 0.773,
       "regime": "calm"
     },
     {
       "date": "2023-05",
-      "value": 0.131,
+      "value": 0.073,
       "regime": "calm"
     },
     {
       "date": "2023-06",
-      "value": 0.283,
+      "value": 0.226,
       "regime": "calm"
     },
     {
       "date": "2023-07",
-      "value": -0.529,
+      "value": -0.597,
       "regime": "easy"
     },
     {
       "date": "2023-08",
-      "value": 0.624,
+      "value": 0.572,
       "regime": "calm"
     },
     {
       "date": "2023-09",
-      "value": 0.692,
+      "value": 0.642,
       "regime": "calm"
     },
     {
       "date": "2023-10",
-      "value": -0.171,
+      "value": -0.234,
       "regime": "easy"
     },
     {
       "date": "2023-11",
-      "value": -0.709,
+      "value": -0.779,
       "regime": "easy"
     },
     {
       "date": "2023-12",
-      "value": -0.656,
+      "value": -0.725,
       "regime": "easy"
     },
     {
       "date": "2024-01",
-      "value": -1.071,
+      "value": -1.146,
       "regime": "easy"
     },
     {
       "date": "2024-02",
-      "value": -0.576,
+      "value": -0.644,
       "regime": "easy"
     },
     {
       "date": "2024-03",
-      "value": -0.555,
+      "value": -0.623,
       "regime": "easy"
     },
     {
       "date": "2024-04",
-      "value": -1.087,
+      "value": -1.162,
       "regime": "easy"
     },
     {
       "date": "2024-05",
-      "value": -0.633,
+      "value": -0.702,
       "regime": "easy"
     },
     {
       "date": "2024-06",
-      "value": 0.091,
+      "value": 0.032,
       "regime": "calm"
     },
     {
       "date": "2024-07",
-      "value": 0.006,
-      "regime": "calm"
+      "value": -0.054,
+      "regime": "easy"
     },
     {
       "date": "2024-08",
-      "value": -0.495,
+      "value": -0.562,
       "regime": "easy"
     },
     {
       "date": "2024-09",
-      "value": -0.85,
+      "value": -0.922,
       "regime": "easy"
     },
     {
       "date": "2024-10",
-      "value": 0.012,
-      "regime": "calm"
+      "value": -0.048,
+      "regime": "easy"
     },
     {
       "date": "2024-11",
-      "value": 0.339,
+      "value": 0.284,
       "regime": "calm"
     },
     {
       "date": "2024-12",
-      "value": 1.368,
+      "value": 1.327,
       "regime": "elevated"
     },
     {
       "date": "2025-01",
-      "value": -0.138,
+      "value": -0.2,
       "regime": "easy"
     },
     {
       "date": "2025-02",
-      "value": -0.521,
+      "value": -0.588,
       "regime": "easy"
     },
     {
       "date": "2025-03",
-      "value": 0.233,
+      "value": 0.176,
       "regime": "calm"
     },
     {
       "date": "2025-04",
-      "value": 0.944,
+      "value": 0.896,
       "regime": "calm"
     },
     {
       "date": "2025-05",
-      "value": -0.287,
+      "value": -0.351,
       "regime": "easy"
     },
     {
       "date": "2025-06",
-      "value": -0.31,
+      "value": -0.375,
       "regime": "easy"
     },
     {
       "date": "2025-07",
-      "value": 0.379,
+      "value": 0.324,
       "regime": "calm"
     },
     {
       "date": "2025-08",
-      "value": -0.116,
-      "regime": "easy"
+      "value": 0.034,
+      "regime": "calm"
     },
     {
       "date": "2025-09",
-      "value": -0.289,
-      "regime": "easy"
+      "value": 0.38,
+      "regime": "calm"
     },
     {
       "date": "2025-10",
-      "value": -0.802,
-      "regime": "easy"
+      "value": 0.2,
+      "regime": "calm"
     },
     {
       "date": "2025-11",
-      "value": -1.307,
-      "regime": "easy"
+      "value": 0.028,
+      "regime": "calm"
     },
     {
       "date": "2025-12",
-      "value": -0.591,
+      "value": -0.046,
       "regime": "easy"
     },
     {
       "date": "2026-01",
-      "value": -0.624,
-      "regime": "easy"
+      "value": 0.064,
+      "regime": "calm"
     },
     {
       "date": "2026-02",
-      "value": -0.249,
-      "regime": "easy"
+      "value": 0.411,
+      "regime": "calm"
     },
     {
       "date": "2026-03",
-      "value": -0.195,
-      "regime": "easy"
+      "value": 0.584,
+      "regime": "calm"
     },
     {
       "date": "2026-04",
-      "value": -0.55,
-      "regime": "easy"
+      "value": 0.104,
+      "regime": "calm"
     },
     {
       "date": "2026-05",
-      "value": 0.873,
+      "value": 0.856,
       "regime": "calm"
     },
     {
       "date": "2026-06",
-      "value": 0.373,
+      "value": 0.335,
       "regime": "calm"
     },
     {
       "date": "2026-07",
-      "value": -0.839,
+      "value": -0.762,
       "regime": "easy"
     }
   ],
   "history_daily": [
     {
       "date": "2026-01-05",
-      "value": -0.614,
+      "value": -0.616,
       "regime": "easy"
     },
     {
       "date": "2026-01-06",
-      "value": -0.638,
+      "value": -0.642,
       "regime": "easy"
     },
     {
       "date": "2026-01-08",
-      "value": -0.199,
+      "value": -0.207,
       "regime": "easy"
     },
     {
       "date": "2026-01-09",
-      "value": 0.056,
+      "value": 0.042,
       "regime": "calm"
     },
     {
       "date": "2026-01-12",
-      "value": 0.133,
+      "value": 0.117,
       "regime": "calm"
     },
     {
       "date": "2026-01-13",
-      "value": 0.156,
+      "value": 0.138,
       "regime": "calm"
     },
     {
       "date": "2026-01-14",
-      "value": -0.015,
+      "value": -0.03,
       "regime": "easy"
     },
     {
       "date": "2026-01-15",
-      "value": 0.252,
+      "value": 0.233,
       "regime": "calm"
     },
     {
       "date": "2026-01-16",
-      "value": 0.436,
+      "value": 0.416,
       "regime": "calm"
     },
     {
       "date": "2026-01-19",
-      "value": 0.881,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-01-20",
-      "value": 0.135,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-01-21",
-      "value": 0.116,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-01-22",
-      "value": 0.315,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-01-23",
-      "value": 0.432,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-01-26",
-      "value": 0.373,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-01-27",
-      "value": 0.33,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-01-28",
-      "value": 0.164,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-01-29",
-      "value": 0.09,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-01-30",
-      "value": 0.037,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-02",
-      "value": 0.182,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-03",
-      "value": 0.264,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-04",
-      "value": 0.329,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-05",
-      "value": 0.254,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-06",
-      "value": 0.367,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-09",
-      "value": 0.468,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-10",
-      "value": 0.425,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-11",
-      "value": 0.421,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-12",
-      "value": 0.482,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-13",
-      "value": 0.491,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-16",
-      "value": 0.793,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-17",
-      "value": 0.289,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-18",
-      "value": 0.201,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-19",
-      "value": 0.404,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-20",
-      "value": 0.596,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-23",
-      "value": 0.642,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-24",
-      "value": 0.528,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-25",
-      "value": 0.667,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-26",
-      "value": 0.764,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-02-27",
-      "value": 0.634,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-02",
-      "value": 0.565,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-03",
-      "value": 0.629,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-04",
-      "value": 0.722,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-05",
-      "value": 0.734,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-06",
-      "value": 0.858,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-10",
-      "value": 0.674,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-11",
-      "value": 0.647,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-12",
-      "value": 0.635,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-13",
-      "value": 0.551,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-16",
-      "value": 0.604,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-17",
-      "value": 0.682,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-18",
-      "value": 0.495,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-19",
-      "value": 0.519,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-20",
-      "value": 0.629,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-26",
-      "value": 0.43,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-27",
-      "value": 0.516,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-30",
-      "value": 0.47,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-03-31",
-      "value": 0.681,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-04-01",
-      "value": 0.673,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-04-02",
-      "value": 0.763,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-04-03",
-      "value": 0.501,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-04-06",
-      "value": 0.235,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-04-07",
-      "value": 1.181,
-      "regime": "elevated"
-    },
-    {
-      "date": "2026-04-08",
-      "value": 1.846,
-      "regime": "elevated"
-    },
-    {
-      "date": "2026-04-09",
-      "value": 0.075,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-04-10",
-      "value": 0.379,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-04-13",
-      "value": 1.856,
-      "regime": "elevated"
-    },
-    {
-      "date": "2026-04-14",
-      "value": 0.644,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-04-15",
-      "value": -0.238,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-04-16",
-      "value": -0.237,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-04-17",
-      "value": -0.152,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-04-20",
-      "value": -0.795,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-04-21",
-      "value": -0.981,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-04-22",
-      "value": -1.003,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-04-23",
-      "value": -0.509,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-04-24",
-      "value": -0.639,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-04-27",
-      "value": 0.621,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-04-28",
-      "value": -0.535,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-04-29",
-      "value": 1.05,
-      "regime": "elevated"
-    },
-    {
-      "date": "2026-04-30",
-      "value": 0.007,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-04",
-      "value": 0.395,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-05",
-      "value": 0.306,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-06",
-      "value": 0.551,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-08",
-      "value": -0.278,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-05-12",
-      "value": -0.295,
-      "regime": "easy"
-    },
-    {
-      "date": "2026-05-13",
-      "value": 0.71,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-14",
-      "value": 0.889,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-15",
-      "value": 0.927,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-18",
-      "value": 0.113,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-19",
-      "value": 1.201,
-      "regime": "elevated"
-    },
-    {
-      "date": "2026-05-20",
-      "value": 0.165,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-21",
-      "value": 0.279,
-      "regime": "calm"
-    },
-    {
-      "date": "2026-05-22",
       "value": 0.842,
       "regime": "calm"
     },
     {
-      "date": "2026-05-25",
-      "value": 0.64,
+      "date": "2026-01-20",
+      "value": 0.126,
       "regime": "calm"
     },
     {
-      "date": "2026-05-26",
-      "value": 2.512,
-      "regime": "severe"
-    },
-    {
-      "date": "2026-05-28",
-      "value": 2.248,
-      "regime": "severe"
-    },
-    {
-      "date": "2026-05-29",
-      "value": 2.862,
-      "regime": "severe"
-    },
-    {
-      "date": "2026-06-01",
-      "value": 2.806,
-      "regime": "severe"
-    },
-    {
-      "date": "2026-06-02",
-      "value": 2.182,
-      "regime": "severe"
-    },
-    {
-      "date": "2026-06-03",
-      "value": 1.778,
-      "regime": "elevated"
-    },
-    {
-      "date": "2026-06-04",
-      "value": 1.129,
-      "regime": "elevated"
-    },
-    {
-      "date": "2026-06-05",
-      "value": 0.431,
+      "date": "2026-01-21",
+      "value": 0.105,
       "regime": "calm"
     },
     {
-      "date": "2026-06-08",
+      "date": "2026-01-22",
+      "value": 0.304,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-01-23",
+      "value": 0.417,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-01-26",
+      "value": 0.363,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-01-27",
+      "value": 0.323,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-01-28",
+      "value": 0.152,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-01-29",
+      "value": 0.084,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-01-30",
+      "value": 0.034,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-02",
       "value": 0.164,
       "regime": "calm"
     },
     {
+      "date": "2026-02-03",
+      "value": 0.246,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-04",
+      "value": 0.313,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-05",
+      "value": 0.236,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-06",
+      "value": 0.344,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-09",
+      "value": 0.449,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-10",
+      "value": 0.408,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-11",
+      "value": 0.403,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-12",
+      "value": 0.462,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-13",
+      "value": 0.475,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-16",
+      "value": 0.751,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-17",
+      "value": 0.278,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-18",
+      "value": 0.189,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-19",
+      "value": 0.39,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-20",
+      "value": 0.577,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-23",
+      "value": 0.623,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-24",
+      "value": 0.515,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-25",
+      "value": 0.652,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-26",
+      "value": 0.747,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-02-27",
+      "value": 0.618,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-02",
+      "value": 0.545,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-03",
+      "value": 0.608,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-04",
+      "value": 0.704,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-05",
+      "value": 0.712,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-06",
+      "value": 0.841,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-10",
+      "value": 0.658,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-11",
+      "value": 0.623,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-12",
+      "value": 0.616,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-13",
+      "value": 0.527,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-16",
+      "value": 0.579,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-17",
+      "value": 0.666,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-18",
+      "value": 0.482,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-19",
+      "value": 0.49,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-20",
+      "value": 0.606,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-26",
+      "value": 0.413,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-27",
+      "value": 0.502,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-30",
+      "value": 0.443,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-03-31",
+      "value": 0.665,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-04-01",
+      "value": 0.645,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-04-02",
+      "value": 0.746,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-04-03",
+      "value": 0.474,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-04-06",
+      "value": 0.26,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-04-07",
+      "value": 1.243,
+      "regime": "elevated"
+    },
+    {
+      "date": "2026-04-08",
+      "value": 1.939,
+      "regime": "elevated"
+    },
+    {
+      "date": "2026-04-09",
+      "value": 0.126,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-04-10",
+      "value": 0.432,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-04-13",
+      "value": 1.925,
+      "regime": "elevated"
+    },
+    {
+      "date": "2026-04-14",
+      "value": 0.701,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-04-15",
+      "value": -0.175,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-04-16",
+      "value": -0.177,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-04-17",
+      "value": -0.109,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-04-20",
+      "value": -0.76,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-04-21",
+      "value": -0.934,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-04-22",
+      "value": -0.977,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-04-23",
+      "value": -0.468,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-04-24",
+      "value": -0.601,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-04-27",
+      "value": 0.701,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-04-28",
+      "value": -0.474,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-04-29",
+      "value": 1.132,
+      "regime": "elevated"
+    },
+    {
+      "date": "2026-04-30",
+      "value": 0.047,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-04",
+      "value": 0.433,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-05",
+      "value": 0.326,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-06",
+      "value": 0.59,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-08",
+      "value": -0.254,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-05-12",
+      "value": -0.28,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-05-13",
+      "value": 0.76,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-14",
+      "value": 0.962,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-15",
+      "value": 0.994,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-18",
+      "value": 0.144,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-19",
+      "value": 1.265,
+      "regime": "elevated"
+    },
+    {
+      "date": "2026-05-20",
+      "value": 0.21,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-21",
+      "value": 0.327,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-22",
+      "value": 0.906,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-25",
+      "value": 0.646,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-05-26",
+      "value": 2.61,
+      "regime": "severe"
+    },
+    {
+      "date": "2026-05-28",
+      "value": 2.337,
+      "regime": "severe"
+    },
+    {
+      "date": "2026-05-29",
+      "value": 2.926,
+      "regime": "severe"
+    },
+    {
+      "date": "2026-06-01",
+      "value": 2.84,
+      "regime": "severe"
+    },
+    {
+      "date": "2026-06-02",
+      "value": 2.229,
+      "regime": "severe"
+    },
+    {
+      "date": "2026-06-03",
+      "value": 1.825,
+      "regime": "elevated"
+    },
+    {
+      "date": "2026-06-04",
+      "value": 1.17,
+      "regime": "elevated"
+    },
+    {
+      "date": "2026-06-05",
+      "value": 0.48,
+      "regime": "calm"
+    },
+    {
+      "date": "2026-06-08",
+      "value": 0.214,
+      "regime": "calm"
+    },
+    {
       "date": "2026-06-09",
-      "value": 0.315,
+      "value": 0.357,
       "regime": "calm"
     },
     {
       "date": "2026-06-10",
-      "value": 0.296,
+      "value": 0.324,
       "regime": "calm"
     },
     {
       "date": "2026-06-11",
-      "value": 0.298,
+      "value": 0.319,
       "regime": "calm"
     },
     {
       "date": "2026-06-12",
-      "value": 0.493,
+      "value": 0.53,
       "regime": "calm"
     },
     {
       "date": "2026-06-15",
-      "value": -0.142,
+      "value": -0.104,
       "regime": "easy"
     },
     {
       "date": "2026-06-16",
-      "value": 0.094,
+      "value": 0.164,
       "regime": "calm"
     },
     {
       "date": "2026-06-17",
-      "value": -0.141,
+      "value": -0.101,
       "regime": "easy"
     },
     {
       "date": "2026-06-18",
-      "value": -0.135,
+      "value": -0.119,
       "regime": "easy"
     },
     {
       "date": "2026-06-19",
-      "value": 0.234,
+      "value": 0.22,
       "regime": "calm"
     },
     {
       "date": "2026-06-22",
-      "value": -0.112,
+      "value": -0.103,
       "regime": "easy"
     },
     {
       "date": "2026-06-23",
-      "value": -0.337,
+      "value": -0.331,
       "regime": "easy"
     },
     {
       "date": "2026-06-24",
-      "value": -0.342,
+      "value": -0.308,
       "regime": "easy"
     },
     {
       "date": "2026-06-25",
-      "value": -0.658,
+      "value": -0.635,
       "regime": "easy"
     },
     {
       "date": "2026-06-26",
-      "value": -0.683,
+      "value": -0.648,
       "regime": "easy"
     },
     {
       "date": "2026-06-29",
-      "value": -0.244,
+      "value": -0.205,
       "regime": "easy"
     },
     {
       "date": "2026-06-30",
-      "value": -0.264,
+      "value": -0.19,
       "regime": "easy"
     },
     {
       "date": "2026-07-01",
-      "value": -0.872,
+      "value": -0.833,
       "regime": "easy"
     },
     {
       "date": "2026-07-02",
-      "value": 0.524,
-      "regime": "calm"
+      "value": -0.588,
+      "regime": "easy"
     }
   ],
   "episodes": [
