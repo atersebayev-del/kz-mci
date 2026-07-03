@@ -222,63 +222,103 @@ else:
     print(f"  ✓ Loadings from {loadings_df.index[-1].strftime('%Y-%m')} "
           f"({len(loadings_df)} months)")
 
-# ── 5. Daily scoring — single day values through current loadings ─────────────
+# ── 5. Daily scoring — full PCA per day, matching local option_a_preview.py ──
+#
+# Methodology must match option_a_preview.py exactly: for each day, treat it
+# as if it were the current month's single observation, run an expanding-
+# window PCA (fit fresh each time), and take that day's raw score. This is
+# what preserves single-day extremes (spikes) instead of smoothing them out
+# against a monthly average, which is what the old fixed-loadings approach did.
+#
+# To keep this fast on every run, the un-normalized raw PCA score for each
+# day is cached in kz_mci_daily_raw.csv. Once a day is outside the current
+# month, its raw score can never change (the data behind it is settled), so
+# it's only computed once. Only new days and the current (still-forming)
+# month get recomputed each run. Renormalizing with the latest norm_mean/std
+# is cheap and always applied to the full cached window.
 
-print("\n5. Computing daily scores...")
+print("\n5. Computing daily scores (full PCA per day, matching local pipeline)...")
 
-# Load existing daily scores
-daily_csv_path = f"{DATA_DIR}/kz_mci_daily.csv"
-if os.path.exists(daily_csv_path):
-    daily_existing = pd.read_csv(daily_csv_path, index_col="date",
-                                  parse_dates=False)["KZ_MCI_daily"]
-    daily_existing = _coerce_datetime_index(
-        daily_existing.to_frame(), "kz_mci_daily.csv"
-    )["KZ_MCI_daily"]
+daily_csv_path     = f"{DATA_DIR}/kz_mci_daily.csv"
+daily_raw_path     = f"{DATA_DIR}/kz_mci_daily_raw.csv"
+FORCE_DAILY_RECOMPUTE = os.environ.get("FORCE_DAILY_RECOMPUTE", "").lower() == "true"
+
+if os.path.exists(daily_raw_path) and not FORCE_DAILY_RECOMPUTE:
+    daily_raw_existing = pd.read_csv(daily_raw_path, index_col="date",
+                                      parse_dates=False)["raw_score"]
+    daily_raw_existing = _coerce_datetime_index(
+        daily_raw_existing.to_frame(), "kz_mci_daily_raw.csv"
+    )["raw_score"]
 else:
-    daily_existing = pd.Series(dtype=float, name="KZ_MCI_daily")
+    daily_raw_existing = pd.Series(dtype=float, name="raw_score")
 
-# Get current loadings (most recent month)
-latest_loadings = loadings_df.iloc[-1]
-load_cols = [c for c in latest_loadings.index
-             if c != "variance_explained" and c in vars_present]
+cutoff             = pd.Timestamp(today - timedelta(days=DAILY_HISTORY_DAYS))
+daily_days         = combined[combined.index >= cutoff].index
+current_month_start = pd.Timestamp(today.replace(day=1))
 
-# Compute mean/std for standardization from monthly data
-monthly_for_std = combined[load_cols].resample("ME").mean()
-std_mean = monthly_for_std.mean()
-std_std  = monthly_for_std.std()
+days_to_compute = [
+    d for d in daily_days
+    if d not in daily_raw_existing.index or d >= current_month_start
+]
 
-# Score each trading day in the last DAILY_HISTORY_DAYS
-cutoff     = pd.Timestamp(today - timedelta(days=DAILY_HISTORY_DAYS))
-daily_days = combined[combined.index >= cutoff].index
-new_scores = {}
+new_raw_scores = {}
+for day in days_to_compute:
+    month_start = day.replace(day=1)
+    month_end   = day + pd.offsets.MonthEnd(0)
 
-for day in daily_days:
-    row = combined.loc[day, load_cols]
-    if row.isna().all():
+    monthly_to_day = combined[combined.index < month_start][vars_present] \
+        .resample("ME").mean()
+
+    single_day = combined.loc[[day], vars_present]
+    if single_day.isna().all(axis=1).all():
         continue
-    # Standardize using monthly mean/std
-    scaled = (row.fillna(std_mean[load_cols]) - std_mean[load_cols]) / \
-             std_std[load_cols].replace(0, np.nan)
-    # Score using loadings
-    raw_score = (scaled * latest_loadings[load_cols]).sum()
-    # Normalize to index scale
-    norm_score = (raw_score - norm_mean) / norm_std
-    new_scores[day] = norm_score
+    monthly_to_day.loc[month_end] = single_day.iloc[0]
+    monthly_to_day = monthly_to_day.sort_index()
 
-daily_new = pd.Series(new_scores, name="KZ_MCI_daily")
-daily_new.index = pd.DatetimeIndex(daily_new.index)
-daily_new.index.name = "date"
+    if len(monthly_to_day) < INITIAL_WINDOW_MONTHS + 2:
+        continue
 
-# Merge with existing, keep last DAILY_HISTORY_DAYS
-daily_combined = pd.concat([daily_existing, daily_new])
-daily_combined = _coerce_datetime_index(
-    daily_combined.to_frame(), "daily_combined (pre-sort)"
-)["KZ_MCI_daily"]
-daily_combined = daily_combined[
-    ~daily_combined.index.duplicated(keep="last")].sort_index()
-daily_combined = daily_combined[daily_combined.index >= cutoff]
+    window = monthly_to_day.copy()
+    cols   = window.columns[window.isna().mean() <= 0.4].tolist()
+    window = window[cols]
+    window = window[window.isna().mean(axis=1) <= 0.5]
+
+    if len(window) < INITIAL_WINDOW_MONTHS or len(cols) < 3:
+        continue
+
+    scaler = StandardScaler()
+    scaled = scaler.fit_transform(window.fillna(window.mean()))
+    pca    = PCA(n_components=1)
+    pca.fit(scaled)
+
+    current_row = scaler.transform(
+        monthly_to_day[cols].iloc[[-1]].fillna(window[cols].mean())
+    )
+    new_raw_scores[day] = pca.transform(current_row)[0, 0]
+
+daily_raw_new = pd.Series(new_raw_scores, name="raw_score")
+daily_raw_new.index = pd.DatetimeIndex(daily_raw_new.index)
+daily_raw_new.index.name = "date"
+
+daily_raw_combined = pd.concat([daily_raw_existing, daily_raw_new])
+daily_raw_combined = _coerce_datetime_index(
+    daily_raw_combined.to_frame(), "daily_raw_combined (pre-sort)"
+)["raw_score"]
+daily_raw_combined = daily_raw_combined[
+    ~daily_raw_combined.index.duplicated(keep="last")].sort_index()
+daily_raw_combined = daily_raw_combined[daily_raw_combined.index >= cutoff]
+daily_raw_combined.to_csv(daily_raw_path, header=True)
+
+# Renormalize the full cached window with the current norm constants
+daily_combined = (daily_raw_combined - norm_mean) / norm_std
+daily_combined.name = "KZ_MCI_daily"
+daily_combined.index.name = "date"
 daily_combined.to_csv(daily_csv_path, header=True)
 
+n_backfill = len([d for d in days_to_compute if d < current_month_start])
+n_current  = len([d for d in days_to_compute if d >= current_month_start])
+print(f"  Recomputed {len(days_to_compute)} day(s) this run "
+      f"({n_backfill} backfill, {n_current} current month)")
 print(f"  ✓ Daily scores: {len(daily_combined)} trading days "
       f"({daily_combined.index[0].date()} → {daily_combined.index[-1].date()})")
 print(f"  Latest daily reading: {daily_combined.iloc[-1]:+.3f}σ "
