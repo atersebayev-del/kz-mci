@@ -16,7 +16,7 @@
     "change": 0.238,
     "regime": "Easy conditions",
     "interpretation": "Below historical average by 0.61 standard deviations",
-    "days_in_current_month": 2
+    "days_in_current_month": 3
   },
   "thresholds": {
     "severe": 2.0,
