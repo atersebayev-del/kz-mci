@@ -25,7 +25,16 @@ INSTRUMENTS = {
 # KASE uses specific from/to ranges for recent indicator data
 # These match what KASE's chart actually fetches for recent data
 INDICATOR_RECENT_FROM = 1754524800   # 2025-08-07 — start of recent chunk
-INDICATOR_RECENT_TO   = 1783036800   # 2026-07-03 — end of recent chunk
+
+def _today_utc():
+    # Recomputed dynamically every run — do NOT hardcode this value.
+    # A previous version froze this as a literal timestamp, which silently
+    # stopped fetching new TONIA/TWINA/SWAP data once that date passed.
+    from datetime import timezone
+    today = datetime.now(timezone.utc)
+    return int(today.replace(hour=23, minute=59, second=59, microsecond=0).timestamp())
+
+INDICATOR_RECENT_TO = _today_utc()   # end of recent chunk — always "today"
 
 def to_unix(date_str):
     # Use UTC midnight to avoid local timezone shifting dates
