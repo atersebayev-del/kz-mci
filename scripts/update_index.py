@@ -127,16 +127,30 @@ print(f"  Variables: {list(new_vars.columns)}")
 print("\n3. Updating historical dataset...")
 dataset_path = f"{DATA_DIR}/dataset_final.csv"
 
+new_vars_cols = new_vars[[v for v in VARS if v in new_vars.columns]]
+
 if os.path.exists(dataset_path):
     existing = pd.read_csv(dataset_path, index_col="date", parse_dates=False)
     existing = _coerce_datetime_index(existing, "dataset_final.csv")
-    # Merge: existing + new, new takes precedence for overlapping dates
-    combined = pd.concat([existing, new_vars[[v for v in VARS
-                                               if v in new_vars.columns]]])
-    combined = combined[~combined.index.duplicated(keep="last")].sort_index()
+
+    # Merge on the union of dates. For overlapping dates, prefer the freshly
+    # fetched value — but ONLY where it's actually present. The freshly
+    # fetched window is short (LOOKBACK_DAYS), so rolling stats like
+    # usdkzt_ret_21d are NaN for the first ~21 trading days of that window
+    # (not enough prior data within the window itself to complete the
+    # rolling calc) even though the correct value already exists in
+    # `existing` from a prior run. A plain keep="last" concat would let
+    # those fresh NaNs silently overwrite good stored history on every
+    # single run. combine_first fixes this: new value wins when present,
+    # existing value is kept when new is NaN.
+    union_index     = existing.index.union(new_vars_cols.index)
+    existing_aligned = existing.reindex(union_index)
+    new_aligned      = new_vars_cols.reindex(union_index)
+    combined = new_aligned.combine_first(existing_aligned)
+    combined = combined.sort_index()
     print(f"  Dataset: {len(existing)} → {len(combined)} rows")
 else:
-    combined = new_vars
+    combined = new_vars_cols
     print(f"  New dataset: {len(combined)} rows")
 
 combined.to_csv(dataset_path)
@@ -271,6 +285,17 @@ for day in days_to_compute:
 
     single_day = combined.loc[[day], vars_present]
     if single_day.isna().all(axis=1).all():
+        continue
+    # Strict completeness guard: don't score a day off partial data. If ANY
+    # required variable is missing for this specific day (e.g. a KASE fetch
+    # failed or returned incomplete data), skip scoring it entirely rather
+    # than silently filling the gap with a column mean. A day with a real
+    # gap should show up as missing on the chart, not as a quietly-smoothed
+    # placeholder value.
+    if single_day.iloc[0].isna().any():
+        missing_vars = single_day.columns[single_day.iloc[0].isna()].tolist()
+        print(f"  [SKIP] {day.date()}: missing {missing_vars} — not scored "
+              f"(partial data, will retry next run)")
         continue
     monthly_to_day.loc[month_end] = single_day.iloc[0]
     monthly_to_day = monthly_to_day.sort_index()
