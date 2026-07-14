@@ -59,6 +59,39 @@ without an explicit instruction to do so.
    signal (this is how a real February volatility spike got silently
    smoothed away and took an entire debugging session to find).
 
+## Missing-data handling — daily and monthly diverge, by design
+
+Reviewed 2026-07-14. If daily and monthly readings ever disagree in a way
+that isn't explained by the known monthly-staleness behavior above, check
+whether a missing/sparse variable is being handled differently on the two
+paths — this is the likely next place to look, and is plausibly what the
+2026-07-03 "daily/monthly chart divergence" fix (commit `940565b`) ran into.
+
+- **Fetch failures** (`utils.py: _fetch_single`): 3 retries, then `None` on
+  failure, logged to stdout only (`✗ Failed {symbol}`) — no exception, no
+  alert. A dead feed only surfaces if someone reads the Action log.
+- **Variable construction** (`utils.py: build_variables`): no imputation,
+  NaN propagates directly. Money-market spreads have no redundancy — a
+  missing `TONIA_close` blanks `tonia_spread`, `term_spread_14d`,
+  `swap1d_spread`, and `swap2d_spread` all at once. USD/KZT is the one
+  exception (volume-blended TOM/TOD, only NaN if both legs are missing).
+- **Daily scoring** (`update_index.py:286-299`) — **strict, skip entirely**:
+  if any of the 13 variables is missing for a day, that day gets no score at
+  all (absent from `kz_mci_daily*.csv`, retried next run). This replaced an
+  earlier mean-fill after it silently smoothed away a real Feb volatility
+  spike (see failure mode #4 above).
+- **Monthly scoring** (`update_index.py:174-188`) — **lenient, drop-then-
+  impute**: drops a variable if >40% missing across the window, drops a
+  month if >50% of variables missing, then fills any remaining gaps with
+  the column mean (`window.fillna(window.mean())`) — the exact behavior the
+  daily path was rewritten to avoid.
+
+Net effect: a missing day leaves a self-healing gap in the daily series with
+no alert; a missing variable quietly stops updating part of the daily score
+for as long as the feed is down; and the daily/monthly asymmetry (skip vs.
+impute) means the same gap can be treated completely differently depending
+on which series you're looking at.
+
 ## Two separate `dataset_final.csv` files exist — do not confuse them
 
 - `kz-mci/data/dataset_final.csv` (this repo) — built incrementally by
