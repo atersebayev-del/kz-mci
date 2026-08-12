@@ -58,6 +58,23 @@ without an explicit instruction to do so.
    rather than filling the gap with a column mean — that flattens real
    signal (this is how a real February volatility spike got silently
    smoothed away and took an entire debugging session to find).
+5. **`"days_in_current_month"` in `kz_mci_latest.json` is off by +1,
+   every run — known bug, not yet fixed (found 2026-08-12).**
+   `update_index.py:395` computes it as
+   `len(combined[combined.index >= current_month_start])`, i.e. rows in
+   the raw fetched dataset through *today* (the run date). But `combined`
+   almost always has a row for today even when today fails the
+   completeness guard in failure mode #4 above and gets skipped from
+   scoring (some KASE feeds post before others, so a same-day row exists
+   with a few variables still NaN). So the field counts one unscored day
+   too many relative to `latest.date` (the actual last *scored* day).
+   Verified systematic across 4 consecutive runs (2026-08-06 through
+   2026-08-11), always +1, not a one-off. Doesn't affect the index value
+   itself, only this metadata field — low priority, left unfixed by
+   explicit decision. If frontend "N of ~22 trading days" progress
+   displays ever look off, or this count needs to be trusted for
+   something, fix by deriving it from `daily_combined` (scored days) up
+   to `latest_daily_date` instead of from `combined` up to `today`.
 
 ## Missing-data handling — daily and monthly diverge, by design
 
