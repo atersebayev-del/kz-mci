@@ -5,18 +5,18 @@
     "version": "2.0",
     "methodology": "Expanding-window PCA, Option 1 (13 variables)",
     "loadings_as_of": "2026-07",
-    "last_updated": "2026-08-13",
+    "last_updated": "2026-08-14",
     "data_source": "KASE, NBRK",
     "norm_mean": -1.065432,
     "norm_std": 0.79411
   },
   "latest": {
-    "date": "2026-08-12",
-    "value": -0.498,
-    "change": 0.197,
+    "date": "2026-08-13",
+    "value": -0.824,
+    "change": -0.326,
     "regime": "Easy conditions",
-    "interpretation": "Below historical average by 0.50 standard deviations",
-    "days_in_current_month": 9
+    "interpretation": "Below historical average by 0.82 standard deviations",
+    "days_in_current_month": 10
   },
   "thresholds": {
     "severe": 2.0,
@@ -1210,6 +1210,11 @@
     {
       "date": "2026-08-12",
       "value": -0.498,
+      "regime": "easy"
+    },
+    {
+      "date": "2026-08-13",
+      "value": -0.824,
       "regime": "easy"
     }
   ],
